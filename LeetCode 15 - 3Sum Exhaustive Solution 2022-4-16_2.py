@@ -1,7 +1,6 @@
 #15. 3Sum
 #Medium
 #
-#Share
 #Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 #
 #Notice that the solution set must not contain duplicate triplets.
@@ -33,9 +32,6 @@ class Solution(object):
     def checkIfInSolution(self, mySolution, solutionSet):
         isInSolution = False
         for thisSolution in solutionSet:
-            #if mySolution[0] in thisSolution and mySolution[1] in thisSolution and mySolution[2] in thisSolution:
-            #if collections.Counter(mySolution) == collections.Counter(thisSolution)
-                #isInSolution = True
             
             if len(thisSolution) != len(mySolution):
                 isInSolution = False
