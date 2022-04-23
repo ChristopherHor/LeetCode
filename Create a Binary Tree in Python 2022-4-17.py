@@ -6,20 +6,19 @@
 #     8 9 
 # Includes creating nodes and printing only.  Excludes .add() , .insert(), .delete(), etc.
 
-
-#            1
-#         2     3
-#       4  5
 class Node:
+    
     def __init__(self, value = None):
         self.left = None
         self.right = None
         self.value = value
+        
     def checkChildFull(self, node):
         childIsFull = False
         if node is not None:
             if node.left is not None and node.right is not None:
                 return True   
+            
     def insertValue(self, node, value):
         successFlag = False
         if node is None:
@@ -35,6 +34,7 @@ class Node:
                 node.right = Node(value)
                 successFlag = True
                 return successFlag
+            
             if self.checkChildFull(node.left):
                 if self.checkChildFull(node.right):
                     # if both left and right children are full,
@@ -46,6 +46,7 @@ class Node:
             else: # left child node is not full, so try to insert there
                 self.insertValue(node.left, value)
         return successFlag
+    
     def printTree(self, node, level=0):
         # Prints a rotated binary tree, so that the root is on the left and the leaves on the right.
         # "Left" nodes visually appear below while "right" nodes visually appear above
@@ -86,15 +87,3 @@ n1.printTree(n1)
              9
          4
              8
-
-            ## inserNode....., level = 0, parentNode = None, switchLeftRight = 0
-                ##if switchLeftRight == 0:
-                ##    switchLeftRight = 1 - switchLeftRight #swaps between 0 and 1; 0 is left, 1 is right
-                ##    self.insertNode(node.left, value, level+1, node, switchLeftRight)
-                ##else:
-                ##    switchLeftRight = 1 - switchLeftRight #swaps between 0 and 1; 0 is left, 1 is right
-                ##    self.insertNode(node.right, value, level+1, node, switchLeftRight) #Only add a level deeper if for the right node
-                ###go into Node2, Level=1, parent is 1, switch=1
-                
-            
-            
